@@ -11,8 +11,8 @@ export const getBooks = () => {
 }
 
 
-// export const addNewBook = (book) => {
-//     books.push(book);
-//     return Promise.resolve(books);
-// }
+export const addNewBook = (book) => {
+    books.push(book);
+    return Promise.resolve(books);
+}
 
