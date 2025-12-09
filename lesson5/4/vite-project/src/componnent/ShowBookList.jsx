@@ -8,7 +8,8 @@ export const ShowBookList = () => {
    useEffect(() => {
         getBooks().then((data) => {
             setBooks(data);
-        }).catch(error => {
+        })
+        .catch(error => {
             console.error("Error fetching books:", error);
         });
     }, []);
@@ -22,7 +23,15 @@ export const ShowBookList = () => {
             id: nanoid(),
         };
 
-         event.target.reset();
+        try {
+            console.log("Resetting form");
+            event.target.reset();
+        } catch (error) {
+            console.error("Error resetting form:", error);
+        }
+        finally {
+            console.log("Form reset attempted");
+        }
 
         addNewBook(newBook).then(data => {
             setBooks(data);
