@@ -25,7 +25,7 @@ const handleSubmit = () => {
   return (
     <div className='app'>
       {shoeBooks?<ShowBookList /> : <ShowAuthorList />}
-      <button onClick={change}> {shoeBooks?'book list ':'author list'}</button>
+      <button onClick={change}> {shoeBooks?'author list ':'book list'}</button>
       {isNameSubmitted ? (
                 <h1>hello {librarianName}</h1>
             ) : (
