@@ -25,18 +25,18 @@ const handleSubmit = () => {
   return (
     <div className='app'>
       {shoeBooks?<ShowBookList /> : <ShowAuthorList />}
-      <button onClick={change}> {shoeBooks?'לרשימת הסופרים':'לרשימת הספרים'}</button>
+      <button onClick={change}> {shoeBooks?'book list ':'author list'}</button>
       {isNameSubmitted ? (
                 <h1>hello {librarianName}</h1>
             ) : (
                 <div>
                     <input 
                         type="text" 
-                        placeholder="הכנס את שם הספרנית" 
+                        placeholder="Enter librarian's name" 
                         value={librarianName} 
                         onChange={handleInputChange} 
                     />
-                    <button onClick={handleSubmit}>שלח</button>
+                    <button onClick={handleSubmit}>Submit</button>
                 </div>
             )}
     </div>

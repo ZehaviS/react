@@ -15,7 +15,7 @@ export const ShowAuthorList = () => {
 
     return (
         <>
-            <h2>Library</h2>
+            <h1>Library</h1>
             <ul>
                 {books.map(element => (
                     <li key={element.id}>{element.author}</li>

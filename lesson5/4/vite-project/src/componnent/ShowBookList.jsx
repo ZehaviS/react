@@ -24,25 +24,26 @@ export const ShowBookList = () => {
         };
 
         try {
-            console.log("Resetting form");
-            event.target.reset();
-        } catch (error) {
-            console.error("Error resetting form:", error);
-        }
-        finally {
-            console.log("Form reset attempted");
-        }
-
-        addNewBook(newBook).then(data => {
+            console.log("book adding", newBook);
+             addNewBook(newBook).then(data => {
             setBooks(data);
         }).catch(error => {
             console.error("Error adding book:", error);
         });
+            event.target.reset();
+        } catch (error) {
+            console.error("Error ", error);
+        }
+        finally {
+            console.log("Add book operation completed.");
+        }
+
+       
      }
 
     return (
         <>
-            <h2>Library</h2>
+            <h1>Library</h1>
             <ul>
                    {books.map(element => (
                     <li key={element.id}>{element.name}</li>
